@@ -1,0 +1,7 @@
+DUMP_FILE_DIR       =   /home/guoyi/ramdump/Port_COM27/
+VMLINUX             =   /home/guoyi/msm8998/LINUX/android/vmlinux
+GDB                 =   /home/guoyi/share/aarch64-linux-android-4.9-master/bin/aarch64-linux-android-gdb
+NM                  =   /home/guoyi/share/aarch64-linux-android-4.9-master/bin/aarch64-linux-android-nm
+OBJDUMP             =   /home/guoyi/share/aarch64-linux-android-4.9-master/bin/aarch64-linux-android-objdump
+OUTPUT              =   out/
+PAGE_OFFSET         =   0xffffff8008000000
