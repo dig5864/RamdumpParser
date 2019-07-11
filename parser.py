@@ -118,6 +118,8 @@ class Parser:
                         text_vaddr = int(text_vaddr, 16)
 
                 kaslr_offset = text_vaddr - vmalloc_vaddr - text_offset
+                if (kaslr_offset < 0):
+                    continue
                 print("\n\n***************************************************************************************************")
                 print("*    Kaslr offset for this dump file is \033[1;31m{}\033[0m, please remember it".format(hex(kaslr_offset)))
                 print("*    You can use below command to start this script avoid costing long time to search kaslr offset")
@@ -210,15 +212,3 @@ if __name__ == "__main__":
         c = parser.CrashStarter(parser)
         c.start()
 
-
-## test
-#parser = Parser(dump_file_dir = "/home/guoyi/ramdump/Port_COM27/", vmlinux = "/home/guoyi/msm8998/LINUX/android/vmlinux",  kaslr_offset = 0x1eedc00000)
-#arser = Parser(dump_file_dir="E:\\ramdump\\1524\\Port_COM12")
-#parser.get_ddr_section_from_load_cmm()
-#parser.find_kaslr_offset()
-#r = parser.RamdumpParser(parser)
-#r.parse_to_file()
-#parser.get_ddr_section_from_load_cmm()
-#ramdup = parser.RamdumpParser()
-#crash = parser.CrashStarter(parser)
-#crash.start()
